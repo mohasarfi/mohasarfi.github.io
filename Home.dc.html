@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'IBM Plex Sans',sans-serif;color:#101720;background-color:#F2F4F7;
+    background-image:linear-gradient(#DCE2EC 1px,transparent 1px),linear-gradient(90deg,#DCE2EC 1px,transparent 1px);
+    background-size:32px 32px;line-height:1.6;font-size:16.5px;min-height:100vh;-webkit-font-smoothing:antialiased;
+  }
+  a{color:#1E40C9;text-decoration:none}
+  ::selection{background:#1E40C9;color:#fff}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  @keyframes ecg{0%{stroke-dashoffset:300}100%{stroke-dashoffset:-300}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  #dc-root, #dc-root>.sc-host{height:auto!important;min-height:100%}
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr!important;gap:40px!important}
+    .hero-grid > div:last-child{justify-self:start!important;max-width:340px!important}
+    .pillars-core{grid-template-columns:1fr!important}
+    .xp{grid-template-columns:1fr!important;gap:4px!important}
+    .skillcard{grid-template-columns:1fr!important;gap:14px!important}
+  }
+</style>
+</helmet>
+
+<nav style="position:sticky;top:0;z-index:50;background:rgba(242,244,247,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #C9D1DE">
+  <div style="max-width:1200px;margin:0 auto;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;gap:16px">
+    <a href="Home.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:.85rem;letter-spacing:.04em;color:#101720;font-weight:500;display:flex;align-items:center;gap:9px">
+      <svg viewBox="0 0 26 26" fill="none" aria-hidden="true" style="width:22px;height:22px;display:block;flex:none"><line x1="13" y1="7" x2="13" y2="3.5" stroke="#101720" stroke-width="2" stroke-linecap="round"/><circle cx="13" cy="2.4" r="2" fill="#9A5B2E"/><rect x="4" y="7" width="18" height="14" rx="6" fill="#FFFFFF" stroke="#101720" stroke-width="2"/><circle cx="10" cy="14.5" r="1.9" fill="#101720"/><circle cx="16" cy="14.5" r="1.9" fill="#101720"/></svg>m.sarfi
+    </a>
+    <div style="display:flex;gap:22px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.03em">
+      <a href="#research" data-nav style="color:#5A6678;padding-bottom:3px;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s" style-hover="color:#1E40C9">research</a>
+      <a href="#experience" data-nav style="color:#5A6678;padding-bottom:3px;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s" style-hover="color:#1E40C9">experience</a>
+      <a href="#publications" data-nav style="color:#5A6678;padding-bottom:3px;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s" style-hover="color:#1E40C9">publications</a>
+      <a href="#projects" data-nav style="color:#5A6678;padding-bottom:3px;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s" style-hover="color:#1E40C9">projects</a>
+      <a href="#skills" data-nav style="color:#5A6678;padding-bottom:3px;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s" style-hover="color:#1E40C9">skills</a>
+      <a href="Blog.dc.html" style="color:#5A6678;padding-bottom:3px" style-hover="color:#1E40C9">blog &#8599;</a>
+      <a href="#contact" data-nav style="color:#5A6678;padding-bottom:3px;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s" style-hover="color:#1E40C9">contact</a>
+    </div>
+  </div>
+</nav>
+
+<div style="position:relative;max-width:1200px;margin:0 auto;border-left:1px solid #C9D1DE;border-right:1px solid #C9D1DE;background:rgba(255,255,255,.4)">
+<span style="position:absolute;top:0;left:-1px;width:14px;height:14px;border-left:1.5px solid #9A5B2E;border-top:1.5px solid #9A5B2E;pointer-events:none;z-index:2"></span>
+<span style="position:absolute;top:0;right:-1px;width:14px;height:14px;border-right:1.5px solid #9A5B2E;border-top:1.5px solid #9A5B2E;pointer-events:none;z-index:2"></span>
+<span style="position:absolute;bottom:0;left:-1px;width:14px;height:14px;border-left:1.5px solid #9A5B2E;border-bottom:1.5px solid #9A5B2E;pointer-events:none;z-index:2"></span>
+<span style="position:absolute;bottom:0;right:-1px;width:14px;height:14px;border-right:1.5px solid #9A5B2E;border-bottom:1.5px solid #9A5B2E;pointer-events:none;z-index:2"></span>
+
+<header style="position:relative;overflow:hidden">
+  <div style="position:absolute;top:-120px;right:-80px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(30,64,201,.07),transparent 68%);pointer-events:none"></div>
+  <div style="position:absolute;bottom:-60px;left:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(154,91,46,.06),transparent 70%);pointer-events:none"></div>
+  <div style="max-width:1120px;margin:0 auto;padding:84px 48px 64px;position:relative">
+    <div style="display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:center" class="hero-grid">
+      <div>
+        <span style="display:inline-flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.14em;color:#9A5B2E;text-transform:uppercase;margin-bottom:22px">
+          <span style="width:22px;height:1.5px;background:#9A5B2E;display:inline-block"></span>Machine Learning Scientist
+        </span>
+        <h1 style="font-family:'Archivo',sans-serif;font-weight:880;font-stretch:80%;font-size:clamp(2.9rem,6.4vw,4.7rem);line-height:.96;letter-spacing:-.02em;margin-bottom:24px">Mohammad<br>Sarfi<span style="color:#1E40C9">.</span></h1>
+        <p style="font-size:1.16rem;color:#5A6678;max-width:33em;margin-bottom:16px;text-wrap:pretty">I'm interested in building robots that <strong style="color:#101720;font-weight:600">interact</strong> and <strong style="color:#101720;font-weight:600">learn</strong>. My research sits where <strong style="color:#101720;font-weight:600">machine learning</strong> meets <strong style="color:#101720;font-weight:600">robotics</strong>.</p>
+        <p style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:#5A6678;margin-bottom:26px">// Calgary, Alberta &middot; MSc Robotics, University of Calgary</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">
+          <a href="mailto:sarfimohammadhossein@gmail.com" style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.03em;padding:11px 20px;border:1.5px solid #1E40C9;background:#1E40C9;color:#fff;border-radius:2px;transition:all .15s" style-hover="background:#101720;border-color:#101720">Email</a>
+          <a href="https://github.com/mohasarfi" target="_blank" rel="me" style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.03em;padding:11px 20px;border:1.5px solid #101720;color:#101720;background:transparent;border-radius:2px;transition:all .15s" style-hover="background:#101720;color:#F2F4F7">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=5RxX1P8AAAAJ&hl=en" target="_blank" style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.03em;padding:11px 20px;border:1.5px solid #101720;color:#101720;background:transparent;border-radius:2px;transition:all .15s" style-hover="background:#101720;color:#F2F4F7">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/mohasarfi/" target="_blank" style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.03em;padding:11px 20px;border:1.5px solid #101720;color:#101720;background:transparent;border-radius:2px;transition:all .15s" style-hover="background:#101720;color:#F2F4F7">LinkedIn</a>
+        </div>
+        <div style="display:inline-flex;align-items:center;gap:10px;font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#5A6678;letter-spacing:.04em">
+          <span style="width:7px;height:7px;background:#1E40C9;border-radius:50%;display:inline-block;animation:pulse 2s infinite"></span>open to research collaborations &amp; good conversations
+        </div>
+      </div>
+
+      <div style="border:1.5px solid #101720;border-radius:3px;background:#FFFFFF;box-shadow:8px 8px 0 rgba(16,23,32,.09);overflow:hidden;max-width:400px;justify-self:end;width:100%">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-bottom:1.5px solid #101720;font-family:'IBM Plex Mono',monospace;font-size:.67rem;letter-spacing:.07em;color:#5A6678;white-space:nowrap">
+          <span style="display:flex;align-items:center;gap:7px"><span style="width:6px;height:6px;border-radius:50%;background:#9A5B2E;display:inline-block"></span>m_sarfi.jpg</span>
+          <span>calgary, ab</span>
+        </div>
+        <div style="position:relative;aspect-ratio:4/5;background:#F2F4F7">
+          <img src="photo.jpg" alt="Mohammad Sarfi" style="width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block">
+          <div style="position:absolute;left:12px;bottom:12px;display:flex;gap:6px">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.05em;color:#fff;background:rgba(16,23,32,.62);backdrop-filter:blur(3px);padding:4px 9px;border-radius:2px">RL</span>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.64rem;letter-spacing:.05em;color:#fff;background:rgba(16,23,32,.62);backdrop-filter:blur(3px);padding:4px 9px;border-radius:2px">robotics</span>
+          </div>
+          <div style="position:absolute;right:10px;bottom:0;width:86px;z-index:2">
+            <svg viewBox="0 0 128 150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:88px;height:103px;display:block;filter:drop-shadow(0 3px 5px rgba(16,23,32,.4))">
+              <line x1="64" y1="18" x2="64" y2="10" stroke="#101720" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="64" cy="6" r="4.5" fill="#9A5B2E"/>
+              <path d="M34 100 Q20 94 23 82" stroke="#101720" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <circle cx="23" cy="80" r="6" fill="#FFFFFF" stroke="#101720" stroke-width="2.5"/>
+              <path d="M94 104 Q108 108 105 119" stroke="#101720" stroke-width="8" stroke-linecap="round" fill="none"/>
+              <circle cx="105" cy="121" r="6" fill="#FFFFFF" stroke="#101720" stroke-width="2.5"/>
+              <rect x="30" y="82" width="68" height="54" rx="28" fill="#FFFFFF" stroke="#101720" stroke-width="3"/>
+              <rect x="48" y="133" width="13" height="10" rx="5" fill="#FFFFFF" stroke="#101720" stroke-width="2.5"/>
+              <rect x="67" y="133" width="13" height="10" rx="5" fill="#FFFFFF" stroke="#101720" stroke-width="2.5"/>
+              <rect x="24" y="16" width="80" height="64" rx="32" fill="#FFFFFF" stroke="#101720" stroke-width="3"/>
+              <rect x="35" y="30" width="58" height="38" rx="18" fill="#E7EEFB"/>
+              <circle cx="52" cy="49" r="7" fill="#101720"/>
+              <circle cx="76" cy="50" r="4.5" fill="#101720"/>
+              <circle cx="49.6" cy="46.4" r="2.2" fill="#FFFFFF"/>
+              <circle cx="74.6" cy="48.6" r="1.5" fill="#FFFFFF"/>
+              <path d="M54 60 Q64 67 74 60" stroke="#101720" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path d="M23 79 Q16 74 14 65" stroke="#9A5B2E" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <circle cx="14" cy="56.5" r="3" fill="#9A5B2E"/>
+              <circle cx="18.3" cy="59.6" r="3" fill="#9A5B2E"/>
+              <circle cx="16.6" cy="64.6" r="3" fill="#9A5B2E"/>
+              <circle cx="11.4" cy="64.6" r="3" fill="#9A5B2E"/>
+              <circle cx="9.7" cy="59.6" r="3" fill="#9A5B2E"/>
+              <circle cx="14" cy="61" r="2.2" fill="#1E40C9"/>
+            </svg>
+          </div>
+        </div>
+        <div style="padding:11px 14px;border-top:1px solid #C9D1DE;font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#5A6678;line-height:1.55;text-align:center">&ldquo;Let&rsquo;s give robots <b style="color:#9A5B2E;font-weight:500">a little bit of our intelligence</b>.&rdquo;</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="research" style="border-top:1px solid #C9D1DE">
+  <div style="max-width:1120px;margin:0 auto;padding:64px 48px" data-reveal>
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase">
+      <span style="color:#9A5B2E">01</span><span style="color:#1E40C9">research</span><span style="flex:1;height:1px;background:#C9D1DE"></span>
+    </div>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:#5A6678;margin-bottom:26px;padding:14px 18px;border-left:2px solid #9A5B2E;background:rgba(154,91,46,.045);line-height:1.6">// My core focus is deep reinforcement learning and robotics: how machines learn to make decisions and act in the physical world.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px" class="pillars-core">
+      <div style="background:#FFFFFF;border:1px solid #C9D1DE;border-left:3px solid #1E40C9;border-radius:3px;padding:26px;box-shadow:0 1px 3px rgba(16,23,32,.05);transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-2px);box-shadow:0 8px 22px rgba(16,23,32,.08)">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#1E40C9;letter-spacing:.06em;display:block;margin-bottom:12px">core / deep reinforcement learning</span>
+        <h3 style="font-family:'Archivo',sans-serif;font-weight:760;font-stretch:88%;font-size:1.22rem;margin-bottom:6px">Learning from interaction</h3>
+        <p style="font-size:.94rem;color:#5A6678">How agents learn sequential decisions under uncertainty.</p>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #C9D1DE;border-left:3px solid #1E40C9;border-radius:3px;padding:26px;box-shadow:0 1px 3px rgba(16,23,32,.05);transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-2px);box-shadow:0 8px 22px rgba(16,23,32,.08)">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#1E40C9;letter-spacing:.06em;display:block;margin-bottom:12px">core / robotics</span>
+        <h3 style="font-family:'Archivo',sans-serif;font-weight:760;font-stretch:88%;font-size:1.22rem;margin-bottom:6px">Learning-based robot control</h3>
+        <p style="font-size:.94rem;color:#5A6678">Learning robot control from demonstrations and sim-to-real transfer.</p>
+      </div>
+    </div>
+    <div style="margin-top:16px">
+      <div style="background:#FFFFFF;border:1px solid #C9D1DE;border-left:3px solid #9A5B2E;border-radius:3px;padding:26px;box-shadow:0 1px 3px rgba(16,23,32,.05);transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-2px);box-shadow:0 8px 22px rgba(16,23,32,.08)">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:#9A5B2E;letter-spacing:.06em;display:block;margin-bottom:12px">building toward / physical intelligence</span>
+        <h3 style="font-family:'Archivo',sans-serif;font-weight:760;font-stretch:88%;font-size:1.22rem;margin-bottom:6px">Generative models for embodied agents</h3>
+        <p style="font-size:.94rem;color:#5A6678;max-width:52em">The direction I&rsquo;m actively growing into: generative models of environment dynamics that let agents imagine before they act.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="border-top:1px solid #C9D1DE">
+  <div style="max-width:1120px;margin:0 auto;padding:64px 48px" data-reveal>
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase">
+      <span style="color:#9A5B2E">02</span><span style="color:#1E40C9">experience</span><span style="flex:1;height:1px;background:#C9D1DE"></span>
+    </div>
+    <sc-for list="{{ experience }}" as="x" hint-placeholder-count="4">
+      <div style="display:grid;grid-template-columns:160px 1fr;gap:8px 28px;padding:26px 28px;background:#FFFFFF;border:1px solid #C9D1DE;border-left:3px solid #C9D1DE;border-radius:3px;box-shadow:0 1px 3px rgba(16,23,32,.05);margin-bottom:14px;transition:transform .18s,box-shadow .18s" class="xp" style-hover="transform:translateY(-2px);box-shadow:0 8px 22px rgba(16,23,32,.08)">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:#5A6678;padding-top:5px">{{ x.date }}</div>
+        <div>
+          <h3 style="font-family:'Archivo',sans-serif;font-weight:730;font-stretch:88%;font-size:1.18rem;margin-bottom:3px">{{ x.role }}</h3>
+          <div style="color:#5A6678;font-size:.9rem;margin-bottom:8px">{{ x.org }}</div>
+          <p style="font-size:.97rem;color:#101720;margin:10px 0 8px;font-weight:500;text-wrap:pretty">{{ x.summary }}</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:6px">
+            <sc-for list="{{ x.points }}" as="p" hint-placeholder-count="3">
+              <li style="font-size:.91rem;color:#5A6678;display:flex;gap:10px;align-items:flex-start"><span style="color:#1E40C9;line-height:1.5">&middot;</span><span style="text-wrap:pretty">{{ p }}</span></li>
+            </sc-for>
+          </ul>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="publications" style="border-top:1px solid #C9D1DE">
+  <div style="max-width:1120px;margin:0 auto;padding:64px 48px" data-reveal>
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase">
+      <span style="color:#9A5B2E">03</span><span style="color:#1E40C9">publications</span><span style="flex:1;height:1px;background:#C9D1DE"></span>
+    </div>
+    <sc-for list="{{ pubs }}" as="p" hint-placeholder-count="2">
+      <div style="background:#FFFFFF;border:1px solid #C9D1DE;border-left:3px solid #1E40C9;border-radius:3px;padding:22px 24px;margin-bottom:14px;box-shadow:0 1px 3px rgba(16,23,32,.05);transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-2px);box-shadow:0 8px 22px rgba(16,23,32,.08)">
+        <div style="font-weight:600;font-size:1.02rem;margin-bottom:5px;text-wrap:pretty">{{ p.title }}</div>
+        <div style="font-size:.85rem;color:#5A6678">{{ p.authors }} &middot; <span style="color:#9A5B2E;font-family:'IBM Plex Mono',monospace;font-size:.76rem">{{ p.venue }}</span></div>
+        <div style="margin-top:10px"><a href="{{ p.url }}" target="_blank" rel="noopener noreferrer" style="font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:#1E40C9;border-bottom:1px solid transparent;transition:border-color .15s" style-hover="border-bottom-color:#1E40C9">paper &#8599;</a></div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section id="projects" style="border-top:1px solid #C9D1DE">
+  <div style="max-width:1120px;margin:0 auto;padding:64px 48px" data-reveal>
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase">
+      <span style="color:#9A5B2E">04</span><span style="color:#1E40C9">ongoing projects</span><span style="flex:1;height:1px;background:#C9D1DE"></span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="3">
+        <a href="Projects.dc.html" style="display:block;background:#FFFFFF;border:1px solid #C9D1DE;border-left:3px solid {{ pr.statusBg }};border-radius:3px;padding:26px 30px;box-shadow:0 1px 3px rgba(16,23,32,.05);color:inherit;transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-2px);box-shadow:0 8px 22px rgba(16,23,32,.08)">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:12px;flex-wrap:wrap">
+            <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-stretch:85%;font-size:1.45rem;letter-spacing:-.01em;margin:0">{{ pr.name }}</h2>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:#fff;padding:3px 10px;border-radius:2px;background:{{ pr.statusBg }}">{{ pr.status }}</span>
+          </div>
+          <p style="font-size:.96rem;color:#5A6678;text-wrap:pretty">{{ pr.desc }}</p>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:#1E40C9;margin-top:14px;display:inline-block">more on the projects page &rarr;</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="border-top:1px solid #C9D1DE">
+  <div style="max-width:1120px;margin:0 auto;padding:64px 48px" data-reveal>
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:26px;font-family:'IBM Plex Mono',monospace;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase">
+      <span style="color:#9A5B2E">05</span><span style="color:#1E40C9">skills</span><span style="flex:1;height:1px;background:#C9D1DE"></span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <sc-for list="{{ skills }}" as="s" hint-placeholder-count="3">
+        <div style="display:grid;grid-template-columns:210px 1fr;gap:18px 32px;align-items:start;background:#FFFFFF;border:1px solid #C9D1DE;border-left:3px solid {{ s.accent }};border-radius:3px;box-shadow:0 1px 3px rgba(16,23,32,.05);padding:26px 28px;transition:transform .18s,box-shadow .18s" class="skillcard" style-hover="transform:translateY(-2px);box-shadow:0 8px 22px rgba(16,23,32,.08)">
+          <h3 style="font-family:'Archivo',sans-serif;font-weight:760;font-stretch:88%;font-size:1.15rem;margin:0;padding-top:2px">{{ s.category }}</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:9px">
+            <sc-for list="{{ s.items }}" as="k" hint-placeholder-count="5">
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:#5A6678;padding:6px 13px;border:1px dashed #C9D1DE;border-radius:2px;background:#F2F4F7;transition:border-color .15s,color .15s" style-hover="border-color:#1E40C9;color:#1E40C9">{{ k }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<footer id="contact" style="border-top:1.5px solid #101720;padding:56px 0 64px;margin-top:32px">
+  <div style="max-width:1120px;margin:0 auto;padding:0 48px" data-reveal>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap">
+      <div style="display:flex;align-items:flex-start;gap:22px">
+        <svg viewBox="0 0 128 150" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex:none;width:92px;height:108px;filter:drop-shadow(0 5px 10px rgba(16,23,32,.10))">
+          <line x1="64" y1="18" x2="64" y2="10" stroke="#101720" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="64" cy="6" r="4.5" fill="#9A5B2E"/>
+          <path d="M34 100 Q20 94 23 82" stroke="#101720" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <circle cx="23" cy="80" r="6" fill="#FFFFFF" stroke="#101720" stroke-width="2.5"/>
+          <path d="M94 104 Q108 108 105 119" stroke="#101720" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <circle cx="105" cy="121" r="6" fill="#FFFFFF" stroke="#101720" stroke-width="2.5"/>
+          <rect x="30" y="82" width="68" height="54" rx="28" fill="#FFFFFF" stroke="#101720" stroke-width="3"/>
+          <rect x="48" y="133" width="13" height="10" rx="5" fill="#FFFFFF" stroke="#101720" stroke-width="2.5"/>
+          <rect x="67" y="133" width="13" height="10" rx="5" fill="#FFFFFF" stroke="#101720" stroke-width="2.5"/>
+          <rect x="24" y="16" width="80" height="64" rx="32" fill="#FFFFFF" stroke="#101720" stroke-width="3"/>
+          <rect x="35" y="30" width="58" height="38" rx="18" fill="#E7EEFB"/>
+          <circle cx="52" cy="49" r="7" fill="#101720"/>
+          <circle cx="76" cy="50" r="4.5" fill="#101720"/>
+          <circle cx="49.6" cy="46.4" r="2.2" fill="#FFFFFF"/>
+          <circle cx="74.6" cy="48.6" r="1.5" fill="#FFFFFF"/>
+          <path d="M54 60 Q64 67 74 60" stroke="#101720" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <path d="M23 79 Q16 74 14 65" stroke="#9A5B2E" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <circle cx="14" cy="56.5" r="3" fill="#9A5B2E"/>
+              <circle cx="18.3" cy="59.6" r="3" fill="#9A5B2E"/>
+              <circle cx="16.6" cy="64.6" r="3" fill="#9A5B2E"/>
+              <circle cx="11.4" cy="64.6" r="3" fill="#9A5B2E"/>
+              <circle cx="9.7" cy="59.6" r="3" fill="#9A5B2E"/>
+              <circle cx="14" cy="61" r="2.2" fill="#1E40C9"/>
+        </svg>
+        <div>
+        <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-stretch:85%;font-size:1.9rem;letter-spacing:-.01em;margin-bottom:14px">Let&rsquo;s talk research.</h2>
+        <p style="color:#5A6678;max-width:30em;text-wrap:pretty">Open to conversations about RL, embodied AI, and robotics: collaborations, reading groups, or just interesting problems.</p>
+      </div>
+      </div>
+      <a href="mailto:sarfimohammadhossein@gmail.com" style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.03em;padding:11px 20px;border:1.5px solid #1E40C9;background:#1E40C9;color:#fff;border-radius:2px;transition:all .15s" style-hover="background:#101720;border-color:#101720">sarfimohammadhossein@gmail.com</a>
+    </div>
+    <div style="margin-top:30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <svg width="140" height="27" viewBox="0 0 240 46" fill="none" style="flex:none;overflow:visible" aria-hidden="true">
+        <path d="M0 23 H72 L84 23 L94 6 L106 40 L118 23 L130 23 L138 15 L146 23 H240" stroke="#DCE2EC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M0 23 H72 L84 23 L94 6 L106 40 L118 23 L130 23 L138 15 L146 23 H240" stroke="#9A5B2E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="22 1000" style="animation:ecg 2.8s linear infinite"/>
+      </svg>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:.74rem;color:#5A6678;max-width:36em">// the spark: a big, soft, inflatable robot who only ever wanted to help. still building toward that.</span>
+    </div>
+    <p style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5A6678;margin-top:18px">&copy; 2026 Mohammad Sarfi</p>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!('IntersectionObserver' in window) || reduce){
+      els.forEach(e=>{ e.style.opacity='1'; e.style.transform='none'; });
+      return;
+    }
+    els.forEach(e=>{
+      e.style.opacity='0';
+      e.style.transform='translateY(20px)';
+      e.style.transition='opacity .65s cubic-bezier(.2,.7,.2,1), transform .65s cubic-bezier(.2,.7,.2,1)';
+      e.style.willChange='opacity, transform';
+    });
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting){
+          en.target.style.opacity='1';
+          en.target.style.transform='none';
+          io.unobserve(en.target);
+        }
+      });
+    },{threshold:.1, rootMargin:'0px 0px -7% 0px'});
+    els.forEach(e=>io.observe(e));
+
+    const navLinks = document.querySelectorAll('a[data-nav]');
+    const sections = Array.from(navLinks).map(a => {
+      const id = a.getAttribute('href').replace('#','');
+      return { id, el: document.getElementById(id), link: a };
+    }).filter(s => s.el);
+
+    const setActive = (id) => {
+      navLinks.forEach(a => {
+        a.style.color = '#5A6678';
+        a.style.borderBottomColor = 'transparent';
+      });
+      const active = sections.find(s => s.id === id);
+      if(active){
+        active.link.style.color = '#101720';
+        active.link.style.borderBottomColor = '#9A5B2E';
+      }
+    };
+
+    const sectionIO = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if(en.isIntersecting) setActive(en.target.id);
+      });
+    }, { threshold: 0.15, rootMargin: '-60px 0px -40% 0px' });
+    sections.forEach(s => sectionIO.observe(s.el));
+  }
+  renderVals(){
+    return {
+      skills: [
+        { category:'Machine Learning', accent:'#1E40C9',
+          items:['Reinforcement Learning','Deep Learning','Generative Models (GANs, VAEs, Diffusion)','Computer Vision','Graph Neural Networks','Multi-Objective Optimization'] },
+        { category:'Robotics & Control', accent:'#9A5B2E',
+          items:['Sim-to-Real Transfer','Robot Navigation & Exploration','Imitation Learning','Decision-Making under Uncertainty'] },
+        { category:'Languages & Tools', accent:'#C9D1DE',
+          items:['Python','PyTorch','ROS / ROS2','GCP'] }
+      ],
+      experience: [
+        { date:'2026 — present', role:'Machine Learning Scientist', org:'AsterQuanta · Matthew Taylor Consulting',
+          summary:'Leading research on RL agents and diffusion-based generative models for automated analog circuit design.',
+          points:[
+            'Bi-level optimization framework for analog topology generation and device sizing',
+            'Diffusion-based imitation learning policy via self-supervised masked reconstruction of circuit primitives, as a foundation for a downstream RL topology agent',
+            'Discrete-action RL agent performing primitive-level topology edits',
+            'Post-hoc explainability for RL agents: transition dynamics modeling, GNNExplainer, attention analysis'
+          ]},
+        { date:'2024 — 2025', role:'Machine Learning Resident', org:'Amii (Alberta Machine Intelligence Institute)',
+          summary:'Developed transferable, multi-objective, and hierarchical RL policies for analog circuit optimization across topologies and technologies.',
+          points:[
+            'Dual-level GAT with hierarchical pooling for topology-agnostic embeddings',
+            'Hierarchical multi-advisor RL with a transformer-based global optimizer',
+            'Preference-conditioned policies covering the full reward-preference space via vectorized Q-learning',
+            'End-to-end framework integrating PyTorch SAC agents with SPICE simulators'
+          ]},
+        { date:'2022 — 2024', role:'Graduate ML Research Assistant', org:'Intelligent Dynamics and Control Lab, University of Calgary',
+          summary:'Researched deep RL methods for decision-making under uncertainty in autonomous robotic exploration.',
+          points:[
+            'Distributional RL (IQN, C51) and PPO with intrinsic curiosity for exploration',
+            '2D robot-navigation simulation framework in Python',
+            'Best Graduate Teaching Assistant Award, Schulich School of Engineering (2024)'
+          ]},
+        { date:'2024', role:'Machine Learning Instructor', org:'RoboGarden',
+          summary:'Taught machine learning and modern deep learning fundamentals to industry learners.',
+          points:[] }
+      ],
+      pubs: [
+        { title:'Risk-Sensitive Autonomous Exploration of Unknown Environments: A Deep Reinforcement Learning Perspective',
+          authors:'M. Sarfi, M. Bisheban', venue:'Journal of Intelligent & Robotic Systems, 2025', url:'https://link.springer.com/article/10.1007/s10846-025-02235-2' },
+        { title:'Market-Based Collaborative Exploration and Mapping of an Unknown Indoor Environment',
+          authors:'M. Sarfi, M. Bisheban', venue:'Proc. 10th Int. Conf. of Control Systems and Robotics (CDSR), 2023', url:'https://www.researchgate.net/profile/Mahdis-Bisheban/publication/371705933_Market-Based_Collaborative_Exploration_and_Mapping_of_an_Unknown_Indoor_Environment/links/67d1e7e0d759700065087048/Market-Based-Collaborative-Exploration-and-Mapping-of-an-Unknown-Indoor-Environment.pdf' }
+      ],
+      projects: [
+        { name:'ML-based Analog Circuit Design', status:'AT WORK', statusBg:'#101720',
+          desc:'Leading research on RL and generative models for automated analog circuit design at AsterQuanta — from topology generation to multi-objective optimization.' },
+        { name:'DreamManip', status:'EXPLORING', statusBg:'#9A5B2E',
+          desc:'An independent research project at the intersection of world models and robotic manipulation.' },
+        { name:'CareWatch', status:'ACTIVE', statusBg:'#1E40C9',
+          desc:'Fall detection and automated report generation: computer vision for fall events, paired with an LLM-driven pipeline for structured incident reports.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

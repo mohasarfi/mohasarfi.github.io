@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'IBM Plex Sans',sans-serif;color:#101720;background-color:#F2F4F7;
+    background-image:linear-gradient(#DCE2EC 1px,transparent 1px),linear-gradient(90deg,#DCE2EC 1px,transparent 1px);
+    background-size:32px 32px;line-height:1.6;font-size:16.5px;min-height:100vh;-webkit-font-smoothing:antialiased;
+  }
+  a{color:#1E40C9;text-decoration:none}
+  ::selection{background:#1E40C9;color:#fff}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+  @keyframes ecg{0%{stroke-dashoffset:300}100%{stroke-dashoffset:-300}}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+
+<nav style="position:sticky;top:0;z-index:50;background:rgba(242,244,247,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid #C9D1DE">
+  <div style="max-width:1200px;margin:0 auto;padding:14px 40px;display:flex;justify-content:space-between;align-items:center;gap:16px">
+    <a href="Home.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:.85rem;letter-spacing:.04em;color:#101720;font-weight:500;display:flex;align-items:center;gap:9px">
+      <svg viewBox="0 0 26 26" fill="none" aria-hidden="true" style="width:22px;height:22px;display:block;flex:none"><line x1="13" y1="7" x2="13" y2="3.5" stroke="#101720" stroke-width="2" stroke-linecap="round"/><circle cx="13" cy="2.4" r="2" fill="#9A5B2E"/><rect x="4" y="7" width="18" height="14" rx="6" fill="#FFFFFF" stroke="#101720" stroke-width="2"/><circle cx="10" cy="14.5" r="1.9" fill="#101720"/><circle cx="16" cy="14.5" r="1.9" fill="#101720"/></svg>m.sarfi
+    </a>
+    <div style="display:flex;gap:22px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:.78rem;letter-spacing:.03em">
+      <a href="Home.dc.html#research" style="color:#5A6678;padding-bottom:3px" style-hover="color:#1E40C9">research</a>
+      <a href="Home.dc.html#experience" style="color:#5A6678;padding-bottom:3px" style-hover="color:#1E40C9">experience</a>
+      <a href="Home.dc.html#publications" style="color:#5A6678;padding-bottom:3px" style-hover="color:#1E40C9">publications</a>
+      <a href="Projects.dc.html" style="color:#101720;padding-bottom:3px;border-bottom:1.5px solid #9A5B2E">projects</a>
+      <a href="Home.dc.html#skills" style="color:#5A6678;padding-bottom:3px" style-hover="color:#1E40C9">skills</a>
+      <a href="Blog.dc.html" style="color:#5A6678;padding-bottom:3px" style-hover="color:#1E40C9">blog &#8599;</a>
+      <a href="Home.dc.html#contact" style="color:#5A6678;padding-bottom:3px" style-hover="color:#1E40C9">contact</a>
+    </div>
+  </div>
+</nav>
+
+<div style="position:relative;max-width:1200px;margin:0 auto;border-left:1px solid #C9D1DE;border-right:1px solid #C9D1DE;background:rgba(255,255,255,.4)">
+<span style="position:absolute;top:0;left:-1px;width:14px;height:14px;border-left:1.5px solid #9A5B2E;border-top:1.5px solid #9A5B2E;pointer-events:none;z-index:2"></span>
+<span style="position:absolute;top:0;right:-1px;width:14px;height:14px;border-right:1.5px solid #9A5B2E;border-top:1.5px solid #9A5B2E;pointer-events:none;z-index:2"></span>
+<span style="position:absolute;bottom:0;left:-1px;width:14px;height:14px;border-left:1.5px solid #9A5B2E;border-bottom:1.5px solid #9A5B2E;pointer-events:none;z-index:2"></span>
+<span style="position:absolute;bottom:0;right:-1px;width:14px;height:14px;border-right:1.5px solid #9A5B2E;border-bottom:1.5px solid #9A5B2E;pointer-events:none;z-index:2"></span>
+
+<header style="position:relative;overflow:hidden">
+  <div style="position:absolute;top:-120px;right:-80px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(30,64,201,.07),transparent 68%);pointer-events:none"></div>
+  <div style="max-width:1120px;margin:0 auto;padding:64px 48px 24px;position:relative">
+    <a href="Home.dc.html" style="display:block;width:fit-content;white-space:nowrap;font-family:'IBM Plex Mono',monospace;font-size:.78rem;color:#5A6678;margin-bottom:26px" style-hover="color:#1E40C9">&larr; back</a>
+    <span style="display:inline-flex;align-items:center;gap:9px;font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.14em;color:#9A5B2E;text-transform:uppercase;margin-bottom:18px">
+      <span style="width:22px;height:1.5px;background:#9A5B2E;display:inline-block"></span>Selected work
+    </span>
+    <h1 style="font-family:'Archivo',sans-serif;font-weight:880;font-stretch:80%;font-size:clamp(2.6rem,5.6vw,4rem);line-height:.98;letter-spacing:-.02em;margin-bottom:14px">Projects<span style="color:#1E40C9">.</span></h1>
+    <p style="font-size:1.08rem;color:#5A6678;margin-bottom:8px;max-width:36em;text-wrap:pretty">Everything I&rsquo;m currently working on: professional research at AsterQuanta and independent projects on my own time.</p>
+  </div>
+</header>
+
+<section style="border-top:1px solid #C9D1DE">
+  <div style="max-width:1120px;margin:0 auto;padding:48px 48px 64px">
+    <div style="display:flex;flex-direction:column;gap:24px">
+      <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="3">
+        <div data-reveal style="background:#FFFFFF;border:1px solid #C9D1DE;border-left:3px solid {{ pr.statusBg }};border-radius:3px;padding:34px 38px;box-shadow:0 1px 3px rgba(16,23,32,.05);transition:transform .18s,box-shadow .18s" style-hover="transform:translateY(-2px);box-shadow:0 8px 22px rgba(16,23,32,.08)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:14px;flex-wrap:wrap">
+            <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-stretch:85%;font-size:1.7rem;letter-spacing:-.01em;margin:0">{{ pr.name }}</h2>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.06em;color:#fff;padding:4px 11px;border-radius:2px;background:{{ pr.statusBg }}">{{ pr.status }}</span>
+          </div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:.74rem;letter-spacing:.05em;color:{{ pr.lineColor }};margin-bottom:18px;display:flex;align-items:center;gap:10px">
+            <span style="width:7px;height:7px;border-radius:50%;display:inline-block;background:{{ pr.lineColor }};animation:pulse 2s infinite"></span>{{ pr.statusLine }}
+          </div>
+          <sc-for list="{{ pr.paras }}" as="para" hint-placeholder-count="2">
+            <p style="font-size:1rem;color:#5A6678;margin-bottom:12px;line-height:1.65;text-wrap:pretty">{{ para }}</p>
+          </sc-for>
+          <div style="margin-top:18px;padding-top:16px;border-top:1px solid #C9D1DE;font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:#5A6678">{{ pr.note }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<footer style="border-top:1.5px solid #101720;padding:56px 0 64px;margin-top:32px">
+  <div style="max-width:1120px;margin:0 auto;padding:0 48px">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:28px;flex-wrap:wrap">
+      <div>
+        <h2 style="font-family:'Archivo',sans-serif;font-weight:800;font-stretch:85%;font-size:1.9rem;letter-spacing:-.01em;margin-bottom:14px">In the meantime</h2>
+        <p style="color:#5A6678;max-width:30em;text-wrap:pretty">Take a look at my research and experience, or get in touch.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="Home.dc.html#research" style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.03em;padding:11px 20px;border:1.5px solid #1E40C9;background:#1E40C9;color:#fff;border-radius:2px;transition:all .15s" style-hover="background:#101720;border-color:#101720">View research</a>
+        <a href="Home.dc.html" style="font-family:'IBM Plex Mono',monospace;font-size:.8rem;letter-spacing:.03em;padding:11px 20px;border:1.5px solid #101720;color:#101720;background:transparent;border-radius:2px;transition:all .15s" style-hover="background:#101720;color:#F2F4F7">&larr; Home</a>
+      </div>
+    </div>
+    <div style="margin-top:30px;display:flex;align-items:center;gap:13px;flex-wrap:wrap">
+      <svg width="118" height="23" viewBox="0 0 240 46" fill="none" style="flex:none;overflow:visible" aria-hidden="true">
+        <path d="M0 23 H72 L84 23 L94 6 L106 40 L118 23 L130 23 L138 15 L146 23 H240" stroke="#DCE2EC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M0 23 H72 L84 23 L94 6 L106 40 L118 23 L130 23 L138 15 L146 23 H240" stroke="#9A5B2E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="22 1000" style="animation:ecg 2.8s linear infinite"/>
+      </svg>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:#5A6678">&copy; 2026 Mohammad Sarfi &middot; still building toward a robot that cares.</span>
+    </div>
+  </div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount(){
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(!('IntersectionObserver' in window) || reduce){
+      els.forEach(e=>{ e.style.opacity='1'; e.style.transform='none'; });
+      return;
+    }
+    els.forEach(e=>{
+      e.style.opacity='0';
+      e.style.transform='translateY(20px)';
+      e.style.transition='opacity .65s cubic-bezier(.2,.7,.2,1), transform .65s cubic-bezier(.2,.7,.2,1)';
+      e.style.willChange='opacity, transform';
+    });
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{
+        if(en.isIntersecting){
+          en.target.style.opacity='1';
+          en.target.style.transform='none';
+          io.unobserve(en.target);
+        }
+      });
+    },{threshold:.1, rootMargin:'0px 0px -7% 0px'});
+    els.forEach(e=>io.observe(e));
+  }
+  renderVals(){
+    return {
+      projects: [
+        { name:'ML-based Analog Circuit Design', status:'AT WORK', statusBg:'#101720', lineColor:'#9A5B2E',
+          statusLine:'actively building at AsterQuanta',
+          paras:[
+            'Leading research on RL and generative models for automated analog circuit design at AsterQuanta: from topology generation to multi-objective optimization.',
+            'The core challenge is that generating a circuit topology and optimizing its parameters cannot be treated as two separate steps; they are deeply coupled. The research tackles this as a unified problem using a bi-level framework, where a generative model proposes circuit structures and an RL agent handles device-level sizing across multiple competing objectives.'
+          ],
+          note:'// write-up and results coming soon' },
+        { name:'DreamManip', status:'EXPLORING', statusBg:'#9A5B2E', lineColor:'#9A5B2E',
+          statusLine:'setup preparation',
+          paras:[
+            'An independent robot-learning research project at the intersection of world models and manipulation. The idea: can a robot learn to manipulate objects more robustly by first imagining the outcome in a learned world model?'
+          ],
+          note:'// full write-up coming, checking back in soon' },
+        { name:'CareWatch', status:'ACTIVE', statusBg:'#1E40C9', lineColor:'#1E40C9',
+          statusLine:'actively building',
+          paras:[
+            'A fall detection and automated report generation system. Computer vision detects fall events from video; an LLM-driven pipeline then generates structured incident reports, reducing the manual burden on caregivers and improving response times.'
+          ],
+          note:'// details and demo coming soon' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

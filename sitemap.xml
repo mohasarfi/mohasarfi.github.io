@@ -5,15 +5,7 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mohasarfi.github.io/Home.dc.html</loc>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://mohasarfi.github.io/Projects.dc.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mohasarfi.github.io/Blog.dc.html</loc>
-    <priority>0.8</priority>
+    <loc>https://mohasarfi.github.io/blog.html</loc>
+    <priority>0.6</priority>
   </url>
 </urlset>
